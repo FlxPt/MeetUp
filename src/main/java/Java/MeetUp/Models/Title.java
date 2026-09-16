@@ -8,7 +8,7 @@ public class Title {
     @GeneratedValue
     @Id
     @Column(name = "title_id")
-    private int titleId;
+    private int id;
 
     @Column(name = "description")
     private String description;

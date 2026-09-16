@@ -11,9 +11,9 @@ public class BusinessUnit {
     @GeneratedValue
     @Id
     @Column (name = "business_unit_id")
-    private int businessUnitId;
+    private int id;
 
     @Column (name = "business_unit")
-    private String businessUnitName;
+    private String name;
 
 }

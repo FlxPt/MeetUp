@@ -11,7 +11,7 @@ public class User {
   @GeneratedValue
   @Id
   @Column(name = "app_user_id")
-  private int userId;
+  private int id;
 
   @Column(name = "first_name")
   private String firstName;

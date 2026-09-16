@@ -11,8 +11,8 @@ public class Skill {
     @GeneratedValue
     @Id
     @Column (name = "skill_id")
-    private int skillId;
+    private int id;
 
     @Column(name = "name")
-    private String skillName;
+    private String name;
 }

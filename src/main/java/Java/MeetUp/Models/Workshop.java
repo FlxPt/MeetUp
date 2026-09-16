@@ -11,13 +11,13 @@ public class Workshop {
   @GeneratedValue
   @Id
   @Column(name = "workshop_id")
-  private int workshopId;
+  private int id;
 
   @Column(name = "name")
-  private String workshopName;
+  private String name;
 
   @Column(name = "description")
-  private String workshopDescription;
+  private String description;
 
   @ManyToMany
   @JoinTable(
