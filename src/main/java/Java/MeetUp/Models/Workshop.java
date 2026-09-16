@@ -1,21 +1,28 @@
 package Java.MeetUp.Models;
 
 import jakarta.persistence.*;
-import jdk.jfr.Name;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-public class Appointment {
+public class Workshop {
 
-    @GeneratedValue
-    @Id
-    @Column (name = "appointment_id")
-    private int appointmentId;
+  @GeneratedValue
+  @Id
+  @Column(name = "workshop_id")
+  private int workshopId;
 
-    @Column (name = "number")
-    private int appointmentNumber;
+  @Column(name = "name")
+  private String workshopName;
 
-    @Column (name = "date")
-    private LocalDate appointmentDate;
+  @Column(name = "description")
+  private String workshopDescription;
+
+  @ManyToMany
+  @JoinTable(
+      name = "workshop_skill",
+      joinColumns = @JoinColumn(name = "workshop_id"),
+      inverseJoinColumns = @JoinColumn(name = "skill_id"))
+  private List<Skill> skills;
 }
