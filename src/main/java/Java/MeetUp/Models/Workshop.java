@@ -25,4 +25,7 @@ public class Workshop {
       joinColumns = @JoinColumn(name = "workshop_id"),
       inverseJoinColumns = @JoinColumn(name = "skill_id"))
   private List<Skill> skills;
+
+  @OneToMany(mappedBy = "workshop")
+  private List<WorkshopDate> workshopDates;
 }
