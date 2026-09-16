@@ -3,23 +3,34 @@ package Java.MeetUp.Models;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
 
-    @GeneratedValue
-    @Id
-    @Column (name = "user_id")
-    private int userId;
+  @GeneratedValue
+  @Id
+  @Column(name = "app_user_id")
+  private int userId;
 
-    @Column (name = "username")
-    private String username;
+  @Column(name = "first_name")
+  private String firstName;
 
-    @Column (name = "job")
-    private String userJob;
+  @Column(name = "surname")
+  private String surname;
 
-    @Column (name = "business_unit")
-    private int businessUnit;
+  @ManyToOne
+  @JoinColumn(name = "title_id")
+  private Title title;
 
-    private ArrayList<Skill> skill;
+  @ManyToOne
+  @JoinColumn(name = "business_id")
+  private BusinessUnit businessUnit;
+
+  @ManyToMany
+  @JoinTable(
+      name = "app_user_skill",
+      joinColumns = @JoinColumn(name = "app_user_id"),
+      inverseJoinColumns = @JoinColumn(name = "skill_id"))
+  private List<Skill> skills;
 }
